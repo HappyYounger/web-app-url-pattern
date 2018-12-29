@@ -22,5 +22,8 @@ public class ServletLogin extends HttpServlet {
         String name = params.get("name");
         System.out.println(url);
         System.out.println(name);
+
+        System.out.println(req.getSession().getMaxInactiveInterval());
+
     }
 }

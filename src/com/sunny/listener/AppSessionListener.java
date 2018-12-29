@@ -7,6 +7,9 @@ public class AppSessionListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
 
+        System.out.println(httpSessionEvent.getSession());
+        System.out.println(httpSessionEvent.getSession().getId());
+
     }
 
     @Override

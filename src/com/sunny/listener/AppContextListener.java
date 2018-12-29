@@ -19,6 +19,8 @@ public class AppContextListener implements ServletContextListener {
         paramMap.put("url", "http://www.sunny-edu.com");
         paramMap.put("name","阳光教育");
         this.servletContext.setAttribute("params", paramMap);
+
+
     }
 
     @Override
