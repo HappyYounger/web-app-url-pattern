@@ -16,10 +16,10 @@
             <url-pattern>/auth</url-pattern>
         </web-resource-collection>
 
-        <!--<auth-constraint>-->
-            <!--<role-name>member</role-name>-->
-            <!--<role-name>manager</role-name>-->
-        <!--</auth-constraint>-->
+        <!--需要与tomcat-users.xml中定义的一致-->
+        <auth-constraint>
+            <role-name>tomcat-gui</role-name>
+        </auth-constraint>
 
     </security-constraint>
 
