@@ -8,6 +8,23 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <listener>
+        <listener-class>com.sunny.listener.AppContextListener</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>com.sunny.listener.AppSessionListener</listener-class>
+    </listener>
+    
+    <filter>
+        <filter-name>security_filter</filter-name>
+        <filter-class>com.sunny.filter.Login</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>security_filter</filter-name>
+        <url-pattern>/path/login</url-pattern>
+    </filter-mapping>
+
     <!--默认-->
     <servlet>
         <servlet-name>default</servlet-name>
@@ -56,6 +73,10 @@
     <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>com.sunny.servlet.ServletLogin</servlet-class>
+        <init-param>
+            <param-name>userDefine</param-name>
+            <param-value>1000</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
@@ -66,14 +87,13 @@
     <servlet>
         <servlet-name>not_wildcard</servlet-name>
         <servlet-class>com.sunny.servlet.NotWildCardServlet</servlet-class>
+
     </servlet>
 
     <servlet-mapping>
         <servlet-name>not_wildcard</servlet-name>
         <url-pattern>/some_path/*/not_wildcard</url-pattern>
     </servlet-mapping>
-
-
 
 
 </web-app>
